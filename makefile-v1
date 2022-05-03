@@ -1,0 +1,9 @@
+cc:=gcc
+libcal.a:*.o
+	ar -rcs libcal.a *.o
+main:libcal.a
+	$(cc) -o main test.c libcal.a
+%.o:
+	$(cc) -o %.o -c %.c
+clean:
+	rm -rf *.o main
